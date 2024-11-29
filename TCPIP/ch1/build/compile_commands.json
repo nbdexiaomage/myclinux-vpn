@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/mycroot/ccode/TCPIP/ch1/build",
+  "command": "/usr/bin/gcc  -I/home/mycroot/ccode/TCPIP/ch1/./headfile -g -o CMakeFiles/demo01.dir/src/hello_client.c.o -c /home/mycroot/ccode/TCPIP/ch1/src/hello_client.c",
+  "file": "/home/mycroot/ccode/TCPIP/ch1/src/hello_client.c"
+},
+{
+  "directory": "/home/mycroot/ccode/TCPIP/ch1/build",
+  "command": "/usr/bin/gcc  -I/home/mycroot/ccode/TCPIP/ch1/./headfile -g -o CMakeFiles/demo01.dir/src/hello_server.c.o -c /home/mycroot/ccode/TCPIP/ch1/src/hello_server.c",
+  "file": "/home/mycroot/ccode/TCPIP/ch1/src/hello_server.c"
+}
+]

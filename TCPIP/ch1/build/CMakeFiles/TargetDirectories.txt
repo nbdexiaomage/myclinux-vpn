@@ -1,0 +1,3 @@
+/home/mycroot/ccode/TCPIP/ch1/build/CMakeFiles/demo01.dir
+/home/mycroot/ccode/TCPIP/ch1/build/CMakeFiles/edit_cache.dir
+/home/mycroot/ccode/TCPIP/ch1/build/CMakeFiles/rebuild_cache.dir

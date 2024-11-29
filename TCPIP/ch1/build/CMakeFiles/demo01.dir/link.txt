@@ -1,0 +1,1 @@
+/usr/bin/gcc -g CMakeFiles/demo01.dir/src/hello_client.c.o CMakeFiles/demo01.dir/src/hello_server.c.o -o demo01 
