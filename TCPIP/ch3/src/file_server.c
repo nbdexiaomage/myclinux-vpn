@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#define BUF_SIZE 30
+void erroe_handling(char* message)
+{
+    fputs(message, stderr);
+    fputc('\n', stderr);
+    exit(1);
+}
+
+int main(int argc, char const *argv[])
+{
+    int serv_sock, clnt_sock;
+    struct sockaddr_in serv_addr, clnt_addr;
+    FILE* fp;
+    char buf[BUF_SIZE];
+    int str_len;
+    int read_cnt;
+    socklen_t clnt_adsz;
+
+    fp = fopen("file_server.c", "rb");
+    serv_sock = socket(PF_INET, SOCK_STREAM, 0);
+    if(serv_sock == -1)
+        erroe_handling("socket error");
+    
+    memset(&serv_addr, 0, sizeof(serv_addr));
+    serv_addr.sin_family = AF_INET;
+    serv_addr.sin_addr.s_addr = INADDR_ANY;
+    serv_addr.sin_port = htons(atoi(argv[1]));
+
+    if(bind(serv_sock, (struct sockaddr*) &serv_addr, sizeof(serv_addr)) == -1)
+        erroe_handling("bind error");
+    if(listen(serv_sock, 5) == -1)
+        erroe_handling("listen error");
+
+    clnt_adsz = sizeof(clnt_addr);
+    clnt_sock = accept(serv_sock, (struct sockaddr*) &clnt_addr, &clnt_adsz);
+    if(clnt_sock == -1)
+        erroe_handling("accept error");
+    
+    while (1)
+    {
+        read_cnt = fread((void*)buf, 1, BUF_SIZE, fp);
+        if (read_cnt < BUF_SIZE)
+        {
+            write(clnt_sock, buf, read_cnt);
+            break;
+        }
+        write(clnt_sock, buf, BUF_SIZE);
+    }
+    shutdown(clnt_sock, SHUT_WR);
+    read(clnt_sock, buf, BUF_SIZE);
+    printf("message from client %s\n", buf);
+    
+    fclose(fp);
+    close(clnt_sock);
+    close(serv_sock);
+    return 0;
+}
