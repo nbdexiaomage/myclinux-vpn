@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "pcap.h": "c",
+        "types.h": "c",
+        "wordsize.h": "c",
+        "timesize.h": "c",
+        "stdio.h": "c",
+        "ip.h": "c",
+        "stdlib.h": "c"
+    }
+}
