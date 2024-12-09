@@ -1,0 +1,3 @@
+/home/mycroot/myclinuxvpn/hellodpdk/build/CMakeFiles/hellodpdk.dir
+/home/mycroot/myclinuxvpn/hellodpdk/build/CMakeFiles/edit_cache.dir
+/home/mycroot/myclinuxvpn/hellodpdk/build/CMakeFiles/rebuild_cache.dir

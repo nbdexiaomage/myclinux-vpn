@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/mycroot/myclinuxvpn/hellodpdk/build",
+  "command": "/usr/bin/gcc-12 -DALLOW_EXPERIMENTAL_API -g -O3 -march=native -std=gnu99 -o CMakeFiles/hellodpdk.dir/hellodpdk.c.o -c /home/mycroot/myclinuxvpn/hellodpdk/hellodpdk.c",
+  "file": "/home/mycroot/myclinuxvpn/hellodpdk/hellodpdk.c"
+}
+]

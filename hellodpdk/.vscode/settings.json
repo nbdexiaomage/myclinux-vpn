@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "udp.h": "c",
+        "rte_ethdev.h": "c",
+        "cstdlib": "c"
+    }
+}
